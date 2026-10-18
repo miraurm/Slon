@@ -1,16 +1,13 @@
 public class Slon {
 
-    // ─── Константы команд ───
     private static final String CMD_HELP = "\\help";
     private static final String CMD_EXIT = "\\break";
 
-    // ─── Тексты ───
     private static final String QUESTION = "Купи слона!";
     private static final String REPEAT_QUESTION = "А ты купи слона!";
     private static final String HELP_TEXT =
             "Я хочу уговорить тебя купить слона.";
 
-    // Шаблоны ответов. %s — подстановка реплики пользователя.
     private static final String[] REPLIES = {
             "Ну купи слона!",
             "Все говорят \"%s\", а ты купи слона!",
@@ -19,9 +16,8 @@ public class Slon {
             "Ну пожалуйста, купи слона!"
     };
 
-    private int step = 0;   // счётчик шагов (какой шаблон использовать)
+    private int step = 0;   
 
-    // ─── Приветствие ───
     public String greeting() {
         return String.format(
                 "Привет!%nЯ хочу купить слона.%nДля справки используй %s%n",
@@ -29,7 +25,6 @@ public class Slon {
         );
     }
 
-    // ─── Проверки команд ───
     public boolean isExitCommand(String line) {
         return line.equals(CMD_EXIT);
     }
@@ -38,12 +33,10 @@ public class Slon {
         return line.equals(CMD_HELP);
     }
 
-    // ─── Пустая строка ───
     public boolean isEmptyCommand(String line) {
         return line.isEmpty();
     }
 
-    // ─── Ответ на реплику ───
     public String respond(String line) {
         if (isHelpCommand(line)) {
             return HELP_TEXT;
