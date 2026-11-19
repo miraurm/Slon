@@ -1,3 +1,5 @@
+package ru.oop.slon;
+
 import java.util.Scanner;
 
 public class SlonCli {
